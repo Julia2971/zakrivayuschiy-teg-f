@@ -15,6 +15,96 @@
 */
 
 .page {
+  font-family: var(--main-font);
+  background-color: var(--bg-color);
   min-inline-size: 320px;
   min-block-size: 100dvb;
+  color: var(--accent-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  background: var(--bg-gradient);
+  background-attachment: fixed;
 }
+
+.header {
+  font-family: var(--accent-font);
+  text-transform: uppercase;
+  border: 2px solid var(--accent-color);
+  min-inline-size: 700px;
+  min-block-size: 368px;
+  margin: 102px auto 100px;
+  padding-bottom: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: end;
+  background-color: var(--bg-color);
+}
+.header__logo {
+  font-size: 65px;
+  font-weight: 400;
+  line-height: 65px;
+  text-align: left;
+  color: var(--accent-color);
+  margin-bottom: 20px;
+  text-decoration: none;
+}
+.header__title {
+  font-size: 23px;
+  font-weight: 400;
+  line-height: 23px;
+  text-align: left;
+  color: var(--accent-color);
+  margin-bottom: 25px;
+}
+.theme-menu__list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.theme-menu__item {
+  font-family: var(--accent-font);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 14px;
+  text-align: left;
+  color: var(--accent-color);
+}
+.theme-menu__button {
+  border: none;
+  background-color: inherit;
+}
+.cards{
+
+}
+.card {
+  max-width: 696px;
+  border: 2px solid var(--accent-color);
+  margin-bottom: 50px;
+
+}
+.card:last-of-type{
+  margin-bottom: 0;
+}
+.card__title{
+  font-family: Inter;
+font-size: 18px;
+font-weight: 700;
+line-height: 21.78px;
+text-align: left;
+
+}
+.card__watermark{
+  position: absolute;
+}
+.card__image{
+  position: relative;
+  object-fit: cover;
+  width: 100%;
+}
+
+
+

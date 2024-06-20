@@ -3,6 +3,8 @@
   --accent-font: "PressStart2P-Regular";
   --bg-color: #fff;
   --accent-color: #fff;
+  --max-width-container: clamp(23.438rem, 16.373rem + 30.141vi, 43.5rem);
+  --like-color: #FF0000;
   --bg-gradient: repeating-linear-gradient(
       #d3d3d3 0px 2px,
       transparent 2px 4px

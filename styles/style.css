@@ -248,6 +248,11 @@
   background: var(--bg-color);
   max-width: 355px;
 }
+.modal::backdrop {
+  opacity: 0.75;
+  background: #000000;
+
+}
 .modal[open] {
   display: flex;
   flex-direction: column;

@@ -1,6 +1,8 @@
 :root {
   --main-font: "Inter", sans-serif;
-  --accent-font: "PressStart2P-Regular";
+  --accent-font: "PressStart2P-Regular", fantasy;
+  --accent-weight: 700;
+  --main-weight: 400;
   --bg-color: #fff;
   --accent-color: #fff;
   --max-width-container: clamp(23.438rem, 16.373rem + 30.141vi, 43.5rem);

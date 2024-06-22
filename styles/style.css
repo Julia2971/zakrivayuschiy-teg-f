@@ -16,7 +16,7 @@
 
 .page {
   font-family: var(--main-font);
-  font-variation-settings: "wght" var(--main-font-wght);
+  font-variation-settings: "wght" var(--main-weight);
   background-color: var(--bg-color);
   min-inline-size: 320px;
   min-block-size: 100dvb;
@@ -54,6 +54,7 @@
   text-align: left;
   color: var(--accent-color);
   text-decoration: none;
+  text-transform: uppercase;
 }
 .header__title {
   font-size: clamp(0.875rem, 0.677rem + 0.845vw, 1.438rem);
@@ -66,6 +67,7 @@
   display: flex;
   flex-direction: column;
   gap: 14px;
+  padding: 25px;
 }
 
 .theme-menu__item {
@@ -90,6 +92,7 @@
 .theme-menu__button:disabled::before {
   content: "▶";
   position: absolute;
+  left: -14px;
   animation: header 0.5s infinite ease-in alternate-reverse;
 }
 .theme-menu__button:hover {
@@ -100,7 +103,7 @@
   display: block;
   width: 100%;
   height: 3px;
-  background-color: #000;
+  background-color: var(--accent-color);
   transition: ease 0.3s;
   transform: scaleX(0);
 }
@@ -110,6 +113,7 @@
 
 .theme-menu__button:focus-visible {
   opacity: 0.6;
+  color: var(--accent-color);
 }
 
 .theme-menu__button:focus-visible::after {
@@ -129,10 +133,9 @@
   padding: 5px 10px;
   font-family: inherit;
   font-size: 18px;
-  font-weight: 700;
   line-height: 21.78px;
   text-align: left;
-  font-variation-settings: "wght" var(--main-font);
+  font-variation-settings: "wght" var(--accent-weight);
 }
 .card__image-container {
   position: relative;
@@ -146,6 +149,19 @@
   text-transform: uppercase;
   right: 25px;
   top: 25px;
+  z-index: 1;
+  text-shadow: 0 0 2px var(--bg-color);
+  text-transform: uppercase;
+}
+@supports (
+  (-webkit-text-stroke: 2px var(--bg-color)) or
+    (text-stroke: 1px var(--bg-color))
+) {
+  .image-link {
+    -webkit-text-stroke: 1px var(--shadow);
+    text-stroke: 1px var(--shadow);
+    text-shadow: none;
+  }
 }
 .card__image {
   object-fit: cover;
@@ -175,6 +191,18 @@
   border: none;
   max-height: 38px;
 }
+
+.card__icon-button:focus {
+  outline: none;
+}
+
+.card__icon-button:focus-visible {
+  border: 2px solid var(--accent-color);
+}
+
+.card__icon-button:focus-visible::after {
+  transform: scaleX(1);
+}
 .card__like-button {
   background-color: transparent;
   border: 2px solid var(--accent-color);
@@ -196,7 +224,8 @@
   z-index: 1;
 }
 .button__icon {
-  width: clamp(1.313rem, 1.904rem + -0.657vw, 1.75rem);
+  width: 21px;
+  height: 21px;
   color: var(--accent-color);
 }
 .button-hover:hover {
@@ -225,6 +254,10 @@
   transform: scaleX(1);
 }
 
+.button-hover:focus-visible {
+  box-shadow: 2px 2px 0 var(--accent-color);
+}
+
 .button_save {
   display: flex;
   flex-direction: row;
@@ -236,6 +269,7 @@
   min-height: 55px;
   max-height: 84px;
   border: 2px solid var(--accent-color);
+  gap: 8px;
 }
 
 .modal {
@@ -251,25 +285,36 @@
 .modal::backdrop {
   opacity: 0.75;
   background: #000000;
-
 }
 .modal[open] {
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  padding: 30px;
   align-items: center;
+}
+.button__icon_modal {
+  width: 39px;
+  height: 39px;
+  flex-shrink: 0;
 }
 
 .modal_content {
   display: flex;
   flex-direction: row;
   gap: 20px;
+  align-items: center;
+  margin-bottom: 30px;
 }
 .modal_title {
   font-family: var(--accent-font);
+  font-size: 14px;
+  line-height: 21px;
 }
 .button-dialog {
   margin: 0;
+}
+.button__text {
+  text-transform: uppercase;
 }
 .filter-grayscale {
   filter: grayscale(80%);
@@ -291,9 +336,10 @@
   filter: blur(3px);
 }
 
-
-
 @media (width <= 376px) {
+  .header{
+    gap: 0;
+  }
   .content_widht {
     width: 100%;
   }

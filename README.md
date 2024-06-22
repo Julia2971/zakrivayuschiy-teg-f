@@ -1,3 +1,3 @@
 Учебный проект от Яндекс Практикум
 
- https://julia2971.github.io/zakrivayuschiy-teg-f/
+https://github.com/Julia2971/zakrivayuschiy-teg-f

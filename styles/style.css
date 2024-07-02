@@ -272,7 +272,6 @@
   line-height: 90%;
   font-style: normal;
   color: var(--accent-color);
-  mix-blend-mode: difference;
 }
 
 .button__text:hover {

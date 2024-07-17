@@ -1,10 +1,12 @@
 :root {
   --main-font: "Inter", sans-serif;
   --accent-font: "PressStart2P-Regular", fantasy;
+  --shadow: #FFFFFF;
   --accent-weight: 700;
   --main-weight: 400;
   --bg-color: #fff;
-  --accent-color: #fff;
+  --accent-color: #000000;
+  --bt-accent-color: #fff;
   --max-width-container: clamp(23.438rem, 16.373rem + 30.141vi, 43.5rem);
   --like-color: #FF0000;
   --bg-gradient: repeating-linear-gradient(

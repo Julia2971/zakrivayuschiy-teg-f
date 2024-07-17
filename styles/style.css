@@ -86,6 +86,9 @@
   position: relative;
   padding: 0;
 }
+.theme-menu__button:hover{
+  opacity: 0.6;
+}
 
 .theme-menu__button:focus {
   outline: none;
@@ -159,6 +162,7 @@
     text-stroke: 1px var(--shadow);
     text-shadow: none;
   }
+}
 .card__image {
   object-fit: cover;
   width: 100%;
@@ -186,6 +190,9 @@
   background-color: transparent;
   border: none;
   max-height: 38px;
+  transition: border 0.4s ease;
+  padding: 0;
+  padding-top: 2px;
 }
 
 .card__icon-button:focus {
@@ -217,7 +224,6 @@
   position: relative;
   transition: ease 0.2s 0.2s;
   background-color: var(--bg-color);
-  z-index: 1;
 }
 .button__icon {
   width: 21px;
@@ -267,11 +273,12 @@
   cursor: pointer;
 }
 .button__text {
-  font-family: var(--accent-font);
+  font-family: var(--accent-font, fantasy);
   font-size: 14px;
   line-height: 90%;
   font-style: normal;
-  color: var(--accent-color);
+  color: var(--bt-accent-color);
+  mix-blend-mode: difference;
 }
 
 .button__text:hover {
@@ -296,7 +303,6 @@
   display: flex;
   flex-direction: column;
   padding: 30px;
-  align-items: center;
 }
 .button__icon_modal {
   width: 39px;
@@ -308,8 +314,8 @@
   display: flex;
   flex-direction: row;
   gap: 20px;
-  align-items: center;
   margin-bottom: 30px;
+  align-items: center;
 }
 .modal_title {
   font-family: var(--accent-font, fantasy);
@@ -317,8 +323,13 @@
   line-height: 21px;
   text-transform: uppercase;
 }
+.button__text_modal {
+  text-transform: uppercase;
+}
 .button-dialog {
   margin: 0;
+  width: 100%;
+  padding: 12px;
 }
 .filter-grayscale {
   filter: grayscale(80%);
@@ -343,15 +354,39 @@
 @media (width <= 376px) {
   .header {
     gap: 0;
-    padding: 120px 14px 25px 14px;
+    padding: 114px 14px 25px 14px;
+  }
+  .header__logo{
+    font-size: 49px;
   }
   .header__title {
-    margin-bottom: 25px;
+    margin-top: 4px;
+    margin-bottom: 23px;
+    font-size: 14px;
+  }
+  .card__about{
+    padding: 25px;
+  }
+  .card__watermark{
+    right: 12px;
   }
   .content_widht {
     width: 100%;
   }
   .button_save {
     flex-direction: column;
+  }
+  .button-modal{
+    padding-top: 17px;
+  }
+  .button__icon{
+    width: 28px;
+    height: 28px;
+  }
+  .modal{
+    max-width: 341px;
+  }
+  .modal[open]{
+    padding: 30px 40px;
   }
 }
